@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Navbar scroll effect
+    // Navbar scroll effect + Scroll Progress Bar
     const navbar = document.getElementById('navbar');
-    
+    const progressBar = document.getElementById('scrollProgress');
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+        // Update scroll progress bar
+        if (progressBar) {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = pct + '%';
         }
     });
 
@@ -258,4 +266,219 @@ document.addEventListener('DOMContentLoaded', () => {
             availabilityModal.classList.add('hide');
         });
     }
+
+    // ============================================
+    // TYPING TAGLINE ANIMATION (looping)
+    // ============================================
+    const taglineEl = document.getElementById('heroTagline');
+    if (taglineEl) {
+        const fullText = 'Luxury  •  Comfort  •  Value';
+        let charIdx = 0;
+        let isErasing = false;
+
+        function tick() {
+            if (!isErasing) {
+                // Typing forward
+                if (charIdx < fullText.length) {
+                    taglineEl.textContent = fullText.substring(0, charIdx + 1);
+                    charIdx++;
+                    taglineEl.classList.remove('typing-done');
+                    setTimeout(tick, 80);
+                } else {
+                    // Finished typing — pause 3s then start erasing
+                    taglineEl.classList.add('typing-done');
+                    setTimeout(() => {
+                        taglineEl.classList.remove('typing-done');
+                        isErasing = true;
+                        setTimeout(tick, 80);
+                    }, 3000);
+                }
+            } else {
+                // Erasing
+                if (charIdx > 0) {
+                    charIdx--;
+                    taglineEl.textContent = fullText.substring(0, charIdx);
+                    setTimeout(tick, 45);
+                } else {
+                    // Finished erasing — pause 1s then type again
+                    isErasing = false;
+                    setTimeout(tick, 1000);
+                }
+            }
+        }
+
+        // Start after hero reveal
+        setTimeout(tick, 900);
+    }
+
+
+
+    // ============================================
+    // GALLERY LIGHTBOX
+    // ============================================
+    const lightboxModal  = document.getElementById('lightboxModal');
+    const lightboxImg    = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose  = document.getElementById('lightboxClose');
+    const lightboxPrev   = document.getElementById('lightboxPrev');
+    const lightboxNext   = document.getElementById('lightboxNext');
+
+    if (lightboxModal) {
+        // Collect all visible gallery images
+        let galleryImages = [];
+        let currentLightboxIdx = 0;
+
+        function buildGalleryList() {
+            galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+        }
+        buildGalleryList();
+
+        function openLightbox(idx) {
+            buildGalleryList(); // refresh in case filter changed
+            currentLightboxIdx = idx;
+            const img = galleryImages[idx];
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.alt || '';
+            lightboxModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function showNext() {
+            buildGalleryList();
+            currentLightboxIdx = (currentLightboxIdx + 1) % galleryImages.length;
+            const img = galleryImages[currentLightboxIdx];
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt || '';
+                lightboxImg.style.opacity = '1';
+            }, 180);
+        }
+
+        function showPrev() {
+            buildGalleryList();
+            currentLightboxIdx = (currentLightboxIdx - 1 + galleryImages.length) % galleryImages.length;
+            const img = galleryImages[currentLightboxIdx];
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt || '';
+                lightboxImg.style.opacity = '1';
+            }, 180);
+        }
+
+        // Click gallery items to open
+        document.querySelectorAll('.gallery-item').forEach((item, idx) => {
+            item.addEventListener('click', () => {
+                buildGalleryList();
+                const visibleImgs = Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"]) img'));
+                const clickedSrc = item.querySelector('img').src;
+                const visibleIdx = visibleImgs.findIndex(i => i.src === clickedSrc);
+                galleryImages = visibleImgs;
+                openLightbox(visibleIdx >= 0 ? visibleIdx : 0);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', showNext);
+        lightboxPrev.addEventListener('click', showPrev);
+
+        // Close on backdrop click
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal.classList.contains('open')) return;
+            if (e.key === 'Escape')       closeLightbox();
+            if (e.key === 'ArrowRight')   showNext();
+            if (e.key === 'ArrowLeft')    showPrev();
+        });
+
+        // Smooth image transition
+        lightboxImg.style.transition = 'opacity 0.18s ease';
+    }
+
+    // ============================================
+    // STAR RATING ANIMATION ON SCROLL (looping)
+    // ============================================
+    const reviewCards = document.querySelectorAll('.review-card');
+    if (reviewCards.length) {
+        function triggerStars(card) {
+            const delay = parseInt(card.style.transitionDelay || '0') || 0;
+            setTimeout(() => {
+                card.classList.add('stars-animated');
+                // Remove after animation and re-trigger after pause
+                setTimeout(() => {
+                    card.classList.remove('stars-animated');
+                    setTimeout(() => triggerStars(card), 1200);
+                }, 3500);
+            }, delay + 100);
+        }
+
+        const starObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    triggerStars(entry.target);
+                    starObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        reviewCards.forEach(card => starObserver.observe(card));
+    }
+
+    // ============================================
+    // COUNTER ANIMATION (looping)
+    // ============================================
+    const statHeadings = document.querySelectorAll('.stat-item h3[data-count]');
+
+    function animateCounter(el, onDone) {
+        const target = parseFloat(el.getAttribute('data-count'));
+        const isDecimal = el.hasAttribute('data-decimal');
+        const decimals = isDecimal ? parseInt(el.getAttribute('data-decimal')) : 0;
+        const steps = 60;
+        const stepTime = 1800 / steps;
+        let current = 0;
+        el.textContent = isDecimal ? (0).toFixed(decimals) : '0';
+        el.classList.add('counting');
+
+        const timer = setInterval(() => {
+            current += target / steps;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+                el.classList.remove('counting');
+                if (onDone) onDone();
+            }
+            el.textContent = isDecimal ? current.toFixed(decimals) : Math.floor(current);
+        }, stepTime);
+    }
+
+    function loopCounter(el) {
+        animateCounter(el, () => {
+            // After count completes, wait 3s then repeat
+            setTimeout(() => loopCounter(el), 3000);
+        });
+    }
+
+    if (statHeadings.length) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loopCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        statHeadings.forEach(el => counterObserver.observe(el));
+    }
+
 });

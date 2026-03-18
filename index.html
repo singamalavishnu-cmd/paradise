@@ -24,12 +24,15 @@
 
 <body>
 
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div style="display: flex; align-items: center;">
                 <a href="#home" class="logo">
-                    <img src="assets/images/logo.png" alt="Vishnu Paradise Logo"
+                    <img src="assets/images/logo.png" alt="Vishnu Paradise Rooms Logo"
                         style="height: 80px; width: auto; object-fit: contain;">
                 </a>
                 <button class="btn btn-secondary btn-register trigger-lead-modal"
@@ -61,20 +64,35 @@
         <div class="container hero-split-container">
             <div class="hero-text reveal">
                 <h1>Your Premium Escape. <br><span class="highlight">Comfort at</span> <br>Value Prices</h1>
-                <p>Redefining luxury lodge experiences. The right choice for your stay in Nandalur.</p>
+                <p>Redefining a pleasure lodge experience. The right choice for your stay in Nandalur.</p>
                 <div class="hero-actions">
                     <a href="#services" class="btn btn-primary">Our Services</a>
                     <a href="#contact" class="btn btn-secondary">Book Your Stay</a>
                 </div>
             </div>
             <div class="hero-media reveal" style="transition-delay: 200ms;">
-                <div class="hero-image-card">
-                    <img src="assets/images/lodge_hero.png" alt="Vishnu Paradise Premium Lodge" class="main-hero-img">
+                <div class="hero-logo-card">
+                    <div class="hero-logo-glow"></div>
+                    <div class="hero-logo-ring">
+                        <img src="assets/images/logo.png" alt="Vishnu Paradise Rooms Logo" class="hero-logo-img">
+                    </div>
+                    <!-- Amenity Pills Row (below logo) -->
+                    <div class="hero-pills-row">
+                        <div class="hero-pill"><span>🛁</span> Hot Water</div>
+                        <div class="hero-pill"><span>📶</span> Free Wi-Fi</div>
+                        <div class="hero-pill"><span>❄️</span> AC Rooms</div>
+                        <div class="hero-pill"><span>🔒</span> Secure</div>
+                    </div>
+                    <div class="hero-logo-tagline">
+                        <span class="tagline-line"></span>
+                        <span class="tagline-text" id="heroTagline"></span>
+                        <span class="tagline-line"></span>
+                    </div>
                     <div class="hero-badge">
                         <i class="fa-solid fa-hotel"></i>
                         <div>
                             <strong>#1 Rated Lodge</strong>
-                            <span>In Nandalur & Vontimitta</span>
+                            <span>In Nandalur &amp; Vontimitta</span>
                         </div>
                     </div>
                 </div>
@@ -94,11 +112,11 @@
                         amenities, every moment here is crafted for perfection.</p>
                     <div class="stats">
                         <div class="stat-item">
-                            <h3>7</h3>
+                            <h3 data-count="7" data-suffix="">0</h3>
                             <span>Spacious Rooms</span>
                         </div>
                         <div class="stat-item">
-                            <h3>4.9</h3>
+                            <h3 data-count="4.9" data-suffix="" data-decimal="1">0</h3>
                             <span>(50 Reviews)</span>
                         </div>
                         <div class="stat-item">
@@ -128,10 +146,10 @@
             <div class="section-header reveal">
                 <h2>Our <span class="highlight">Services</span></h2>
                 <p>Discover the perfect blend of comfort and celebration at Vishnu Paradise. Our Lodge features 7
-                    meticulously maintained rooms—3 Standard King size Bed rooms, 3 Spacious King size Bed rooms, and 1
+                    meticulously maintained rooms— 3 Standard King size Bed rooms, 3 Spacious King size Bed rooms, and 1
                     suite
                     with 2-King size Bed
-                    room—alongside our elegant Banquet Hall.</p>
+                    — alongside our elegant Banquet Hall.</p>
             </div>
 
             <div class="services-grid">
@@ -412,8 +430,7 @@
             <div class="attractions-grid">
                 <!-- Soumyanatha Swamy Temple -->
                 <div class="attraction-card reveal">
-                    <img src="assets/images/download.jpeg"
-                        alt="Soumyanatha Swamy Temple">
+                    <img src="assets/images/download.jpeg" alt="Soumyanatha Swamy Temple">
                     <div class="attraction-content">
                         <h3><a href="https://www.google.com/maps/search/Soumyanatha+Swamy+Temple+Nandalur"
                                 target="_blank">Soumyanatha Swamy Temple</a></h3>
@@ -421,15 +438,15 @@
                             your doorstep.</p>
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                             <span class="distance"><i class="fa-solid fa-location-arrow"></i> 4 min (1.1 km)</span>
-                            <a href="https://maps.app.goo.gl/KVgwJh4sc8m4fFqAA" target="_blank" class="btn-video"><i class="fa-solid fa-play"></i> Watch Video</a>
+                            <a href="https://maps.app.goo.gl/KVgwJh4sc8m4fFqAA" target="_blank" class="btn-video"><i
+                                    class="fa-solid fa-play"></i> Watch Video</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Vontimitta Temple -->
                 <div class="attraction-card reveal" style="transition-delay: 100ms;">
-                    <img src="assets/images/vontimitta.jpeg"
-                        alt="Sri Vontimitta Kodanda Rama Swamy Temple">
+                    <img src="assets/images/vontimitta.jpeg" alt="Sri Vontimitta Kodanda Rama Swamy Temple">
                     <div class="attraction-content">
                         <h3><a href="https://www.google.com/maps/search/Sri+Vontimitta+Kodanda+Rama+Swamy+Temple"
                                 target="_blank">Sri Vontimitta Kodanda Rama Swamy Temple</a></h3>
@@ -482,11 +499,10 @@
                     <button class="btn btn-secondary btn-register trigger-lead-modal"
                         style="display: block; margin-bottom: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem; width: fit-content;">Register</button>
                     <p>Your premium escape. Redefining luxury lodge experiences.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    </div>
+                    <a href="https://www.google.com/search?q=VISHNU+PARADISE+Rooms+Nandalur#lrd=0x3bb33b003de84e17:0x21c992a65a4d1593,3"
+                        target="_blank" rel="noopener noreferrer" class="btn-review">
+                        <i class="fa-solid fa-star"></i> Leave a Review on Google
+                    </a>
                 </div>
 
                 <div class="footer-contact">
@@ -551,19 +567,23 @@
             <form id="availabilityForm">
                 <div class="form-row" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
                     <div class="form-group" style="flex: 1;">
-                        <label for="checkIn" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-In</label>
+                        <label for="checkIn"
+                            style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-In</label>
                         <input type="date" id="checkIn" required
                             style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
                     </div>
                     <div class="form-group" style="flex: 1;">
-                        <label for="checkOut" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-Out</label>
+                        <label for="checkOut"
+                            style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-Out</label>
                         <input type="date" id="checkOut" required
                             style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
                     </div>
                 </div>
                 <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="guests" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Guests</label>
-                    <select id="guests" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
+                    <label for="guests"
+                        style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Guests</label>
+                    <select id="guests"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
                         <option value="1">1 Guest</option>
                         <option value="2" selected>2 Guests</option>
                         <option value="3">3 Guests</option>
@@ -571,9 +591,38 @@
                         <option value="5+">5+ Guests</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Check Availability on WhatsApp</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Check Availability on
+                    WhatsApp</button>
             </form>
         </div>
+    </div>
+
+    <!-- Sticky Mobile Bottom Bar -->
+    <div class="sticky-mobile-bar" id="stickyMobileBar">
+        <a href="tel:9515933317" class="sticky-btn sticky-call">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call Us</span>
+        </a>
+        <a href="https://wa.me/919515933317?text=Hi!%20I%20would%20like%20to%20book%20a%20room%20at%20Vishnu%20Paradise."
+            target="_blank" class="sticky-btn sticky-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="#contact" class="sticky-btn sticky-book">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Now</span>
+        </a>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Gallery Image">
+            <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
     <script src="script.js"></script>
