@@ -1404,6 +1404,23 @@ html:not([data-theme]) .fa-sun { display: none; } /* Default light */
     .nav-left {
         gap: 0.6rem;
     }
+
+    /* Reduce gaps on small screens */
+    .hero-text h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-split-container {
+        gap: 1.5rem !important;
+    }
+
+    .hero-actions {
+        margin-bottom: 0;
+    }
 }
 
 /* Enhanced Mobile Menu Interactions */
