@@ -39,6 +39,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: clip; /* Modern way to prevent horizontal bleed without locking vertical scroll */
 }
 
 body {
@@ -46,7 +47,7 @@ body {
     background-color: var(--background);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -2478,15 +2479,11 @@ body:has(.announcement-bar:not(.hidden)) .navbar {
    ============================================ */
 
 /* ---- Global Android Fixes ---- */
-html {
-    overflow-x: hidden;         /* Fix Android Chrome horizontal scroll bleed */
-}
 
 body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     word-break: break-word;     /* Prevent text overflow on narrow Android screens */
-    overscroll-behavior-y: contain; /* Prevent pull-to-refresh interfering with sticky elements */
 }
 
 /* Disable tap highlight on all interactive elements for Android Chrome */
@@ -2569,7 +2566,7 @@ a, button, .btn, .filter-btn, .gallery-item,
     .btn-register    { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
 }
 
-/* ---- 361px–412px: Samsung Galaxy S/A, Pixel 6/7, OnePlus ---- */
+/* ---- 361pxâ€“412px: Samsung Galaxy S/A, Pixel 6/7, OnePlus ---- */
 @media (min-width: 361px) and (max-width: 412px) {
     .hero-text h1 {
         font-size: clamp(1.9rem, 7vw, 2.3rem);
