@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISHNU PARADISE ROOMS | Premium Lodge</title>
+    <meta name="description"
+        content="Welcome to VISHNU PARADISE ROOMS. Enjoy premium amenities including 24/7 hot water, free high-speed Wi-Fi, room service, AC, and secure parking in Nandalur.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div style="display: flex; align-items: center;">
+                <a href="#home" class="logo">
+                    <img src="assets/images/logo.png" alt="Vishnu Paradise Logo"
+                        style="height: 80px; width: auto; object-fit: contain;">
+                </a>
+                <button class="btn btn-secondary btn-register trigger-lead-modal"
+                    style="margin-left: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Register</button>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#attractions">Attractions</a>
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button class="btn btn-outline trigger-availability-modal">Check Availability</button>
+                    <a href="#contact" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-split-container">
+            <div class="hero-text reveal">
+                <h1>Your Premium Escape. <br><span class="highlight">Comfort at</span> <br>Value Prices</h1>
+                <p>Redefining luxury lodge experiences. The right choice for your stay in Nandalur.</p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Book Your Stay</a>
+                </div>
+            </div>
+            <div class="hero-media reveal" style="transition-delay: 200ms;">
+                <div class="hero-image-card">
+                    <img src="assets/images/lodge_hero.png" alt="Vishnu Paradise Premium Lodge" class="main-hero-img">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-hotel"></i>
+                        <div>
+                            <strong>#1 Rated Lodge</strong>
+                            <span>In Nandalur & Vontimitta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2>A Sanctuary of <br>Peace & Comfort</h2>
+                    <p>Located in Nandalur, VISHNU PARADISE ROOMS is designed for travelers who seek both adventure and
+                        unparalleled relaxation.</p>
+                    <p>Whether you're unwinding in our lavish rooms after a day of exploration or enjoying our premium
+                        amenities, every moment here is crafted for perfection.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>7</h3>
+                            <span>Spacious Rooms</span>
+                        </div>
+                        <div class="stat-item">
+                            <h3>4.9</h3>
+                            <span>(50 Reviews)</span>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <span>Concierge</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal">
+                    <!-- Placeholder for secondary image -->
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Lodge Interior">
+                        <div class="experience-badge">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Premium Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Showcase Section -->
+    <section id="services" class="services-showcase">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our <span class="highlight">Services</span></h2>
+                <p>Discover the perfect blend of comfort and celebration at Vishnu Paradise. Our Lodge features 7
+                    meticulously maintained rooms—3 Standard King size Bed rooms, 3 Spacious King size Bed rooms, and 1
+                    suite
+                    with 2-King size Bed
+                    room—alongside our elegant Banquet Hall.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- AC Room Service -->
+                <div class="service-card reveal">
+                    <div class="service-image">
+                        <!-- AC Room Image -->
+                        <img src="assets/images/room-1.jpg" alt="AC Room">
+                    </div>
+                    <div class="service-content">
+                        <h3>Premium AC Rooms</h3>
+                        <p>Experience upscale comfort with our climate-controlled rooms. Enjoy plush bedding, modern
+                            aesthetics, and 24/7 security for a truly relaxing stay.</p>
+                        <ul
+                            style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left; color: var(--text-secondary);">
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Whisper-Quiet AC
+                            </li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> 24/7 Hot Water
+                            </li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> 24/7 Security &
+                                Assistance</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Contact to Book</a>
+                    </div>
+                </div>
+
+                <!-- Non-AC Room Service -->
+                <div class="service-card reveal" style="transition-delay: 150ms;">
+                    <div class="service-image">
+                        <!-- Non-AC Room Image -->
+                        <img src="assets/images/room-2.jpg" alt="Standard Non-AC Room">
+                    </div>
+                    <div class="service-content">
+                        <h3>Standard Non-AC Rooms</h3>
+                        <p>Discover excellent value and absolute comfort in our well-ventilated standard rooms. Clean,
+                            cozy, and perfect for budget-conscious travelers seeking quality rest.</p>
+                        <ul
+                            style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left; color: var(--text-secondary);">
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Excellent
+                                Ventilation</li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> 24/7 Hot Water
+                            </li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Daily
+                                Housekeeping</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Contact to Book</a>
+                    </div>
+                </div>
+
+                <!-- Banquet Hall Service -->
+                <div class="service-card reveal" style="transition-delay: 300ms;">
+                    <div class="service-image">
+                        <!-- Banquet Hall Image -->
+                        <img src="assets/images/banquet-1.jpg" alt="Elegant Banquet Hall">
+                    </div>
+                    <div class="service-content">
+                        <h3>Elegant Banquet Hall</h3>
+                        <p>Host your special moments in our sophisticated mini function hall. Ideal for intimate
+                            weddings, corporate events, and family celebrations with seamless service.</p>
+                        <ul
+                            style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left; color: var(--text-secondary);">
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Smooth Elevator
+                                Access</li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Customizable
+                                Setup</li>
+                            <li><i class="fa-solid fa-check highlight" style="margin-right: 10px;"></i> Dedicated
+                                Support Staff</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-secondary">Inquire for Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Our <span class="highlight">Gallery</span></h2>
+                <p>Take a glimpse into the elegance and comfort that awaits you.</p>
+            </div>
+
+            <div class="gallery-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="lodge">Lodge Rooms</button>
+                <button class="filter-btn" data-filter="banquet">Banquet Hall</button>
+            </div>
+
+            <div class="gallery-grid reveal">
+                <!-- Replace these src attributes with your actual photos later -->
+
+                <!-- Lodge Photos -->
+                <div class="gallery-item lodge">
+                    <img src="assets/images/room-1.jpg" alt="Lodge Room View 1">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item lodge">
+                    <img src="assets/images/room-2.jpg" alt="Lodge Room View 2">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item lodge">
+                    <img src="assets/images/room-3.jpg" alt="Lodge Room View 3">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item lodge">
+                    <img src="assets/images/room-4.jpg" alt="Lodge Reception / Corridor">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item lodge">
+                    <img src="assets/images/lift.jpg" alt="Lodge Elevator Access">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <!-- Banquet Hall Photos -->
+                <div class="gallery-item banquet">
+                    <img src="assets/images/banquet-1.jpg" alt="Banquet Hall Stage Main">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item banquet">
+                    <img src="assets/images/banquet-2.jpg" alt="Banquet Hall Seating View">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+
+                <div class="gallery-item banquet">
+                    <img src="assets/images/banquet-3.jpg" alt="Banquet Hall Floral Stage">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item banquet">
+                    <img src="assets/images/banquet-4.jpg" alt="Banquet Hall Wide View">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>World-Class <span class="highlight">Amenities</span></h2>
+                <p>We've thought of everything so you don't have to. Enjoy our carefully curated facilities designed for
+                    your ultimate comfort.</p>
+            </div>
+
+            <div class="amenities-grid">
+                <!-- Amenity 1 -->
+                <div class="amenity-card reveal">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3>High-Speed Wi-Fi</h3>
+                    <p>Stay connected with ultra-fast, complimentary wireless internet available throughout the entire
+                        lodge property.</p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="amenity-card reveal" style="transition-delay: 100ms;">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-hot-tub"></i>
+                    </div>
+                    <h3>24/7 Hot Water</h3>
+                    <p>Enjoy soothing hot showers anytime with our reliable, continuous hot water system in all suites.
+                    </p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="amenity-card reveal" style="transition-delay: 200ms;">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-elevator"></i>
+                    </div>
+                    <h3>Elevator Access</h3>
+                    <p>Effortless access to all floors via our modern, smooth, and quiet passenger lift system.</p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="amenity-card reveal" style="transition-delay: 300ms;">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Security & Assistance</h3>
+                    <p>Peace of mind with 24/7 CCTV surveillance throughout the premises, and our dedicated helper boy
+                        available to assist with external necessities.</p>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="amenity-card reveal" style="transition-delay: 400ms;">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3>Climate Control (AC)</h3>
+                    <p>Perfect temperature year-round with individual, whisper-quiet air conditioning units in every
+                        room.</p>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="amenity-card reveal" style="transition-delay: 500ms;">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <h3>Secure Parking</h3>
+                    <p>Complimentary, secure, and spacious parking available exclusively for our lodge guests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Guest <span class="highlight">Testimonials</span></h2>
+                <p>Don't just take our word for it—read what our guests have to say about their 4.9-star experience.</p>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card reveal">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Pocket friendly and awesome rooms. Friendly staff, good ambience. Best rooms
+                        available in 50km radius. Simply the best place for families."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">V</div>
+                        <div class="reviewer-info">
+                            <h4>Vishnu Kumar</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card reveal" style="transition-delay: 150ms;">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Good experience with the room stay. Awesome response by the boy. Hot water
+                        available 24*7 and very clean maintenance."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">M</div>
+                        <div class="reviewer-info">
+                            <h4>Sumanth Reddy</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card reveal" style="transition-delay: 300ms;">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Excellent rooms and nice staff. Rooms are very clean. Decent place for
+                        families and very close to the temple."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <h4>Supraja Reddy</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearby Attractions Section -->
+    <section id="attractions" class="attractions">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nearby <span class="highlight">Attractions</span></h2>
+                <p>Explore the spiritual and historical significance of Nandalur during your stay.</p>
+            </div>
+            <div class="attractions-grid">
+                <!-- Soumyanatha Swamy Temple -->
+                <div class="attraction-card reveal">
+                    <img src="assets/images/download.jpeg"
+                        alt="Soumyanatha Swamy Temple">
+                    <div class="attraction-content">
+                        <h3><a href="https://www.google.com/maps/search/Soumyanatha+Swamy+Temple+Nandalur"
+                                target="_blank">Soumyanatha Swamy Temple</a></h3>
+                        <p>The ancient 11th-century Chola temple. Experience the spiritual heritage of Nandalur right at
+                            your doorstep.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span class="distance"><i class="fa-solid fa-location-arrow"></i> 4 min (1.1 km)</span>
+                            <a href="https://maps.app.goo.gl/KVgwJh4sc8m4fFqAA" target="_blank" class="btn-video"><i class="fa-solid fa-play"></i> Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vontimitta Temple -->
+                <div class="attraction-card reveal" style="transition-delay: 100ms;">
+                    <img src="assets/images/vontimitta.jpeg"
+                        alt="Sri Vontimitta Kodanda Rama Swamy Temple">
+                    <div class="attraction-content">
+                        <h3><a href="https://www.google.com/maps/search/Sri+Vontimitta+Kodanda+Rama+Swamy+Temple"
+                                target="_blank">Sri Vontimitta Kodanda Rama Swamy Temple</a></h3>
+                        <p>A magnificent spiritual landmark. Vishnu Paradise is the best lodge for visitors traveling
+                            between Soumyanatha and Vontimitta.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span class="distance"><i class="fa-solid fa-location-arrow"></i> 24 min (18.0 km)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Railway Station -->
+                <div class="attraction-card reveal" style="transition-delay: 200ms;">
+                    <div class="attraction-content">
+                        <h3><a href="https://www.google.com/maps/search/Nandalur+Railway+Station"
+                                target="_blank">Railway Station</a></h3>
+                        <p>Conveniently located for easy travel connections, making our lodge the perfect rest stop for
+                            rail travelers.</p>
+                        <span class="distance"><i class="fa-solid fa-location-arrow"></i> 4 min (1.1 km)</span>
+                    </div>
+                </div>
+
+                <!-- Bus Stop -->
+                <div class="attraction-card reveal" style="transition-delay: 300ms;">
+                    <div class="attraction-content">
+                        <h3><a href="https://www.google.com/maps/search/Nandalur+Bus+Stop" target="_blank">Bus Stop</a>
+                        </h3>
+                        <p>Ultimate convenience for road travelers, located just steps away from our lodge entrance.</p>
+                        <span class="distance"><i class="fa-solid fa-location-arrow"></i> 1 min (73 m)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <section id="contact" class="footer">
+        <!-- Embedded Google Map -->
+        <div class="map-container reveal">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.7097715055806!2d79.1097207750407!3d14.270140586177966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb33b003de84e17%3A0x21c992a65a4d1593!2sVISHNU%20PARADISE!5e0!3m2!1sen!2sin!4v1773815160482!5m2!1sen!2sin"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="container">
+            <div class="footer-grid reveal">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.png" alt="Vishnu Paradise Logo"
+                        style="height: 60px; width: auto; object-fit: contain; margin-bottom: 1rem; opacity: 0.9;">
+                    <button class="btn btn-secondary btn-register trigger-lead-modal"
+                        style="display: block; margin-bottom: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem; width: fit-content;">Register</button>
+                    <p>Your premium escape. Redefining luxury lodge experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/vr1mwiY6cvnfbSUF9"
+                                target="_blank" rel="noopener noreferrer">716, National Highway, Nandalur, Andhra
+                                Pradesh 516150 (74C6+3W)</a></li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:9515933317">9515933317</a></li>
+                        <li><i class="fa-solid fa-envelope"></i> <a
+                                href="mailto:vishnuparadiseofficial@gmail.com">vishnuparadiseofficial@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vishnu Paradise Rooms. All Rights Reserved.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Lead Generation Popup -->
+    <div id="leadModal" class="modal hide">
+        <div class="modal-content">
+            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-icon">
+                <i class="fa-solid fa-bell-concierge"></i>
+            </div>
+            <h2>Get Exclusive Offers</h2>
+            <p>Enter your details below to receive more information and special discounts for your stay at Vishnu
+                Paradise.</p>
+            <form id="leadForm">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <input type="email" id="leadEmail" placeholder="Your Email Address" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <input type="tel" id="leadPhone" placeholder="Your Phone Number" required
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif;">
+                </div>
+                <div id="leadError"
+                    style="color: #ff4d4d; margin-bottom: 1rem; font-size: 0.9rem; display: none; text-align: left;">
+                </div>
+                <!-- Simulating a submission to the owner -->
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Information</button>
+            </form>
+            <div id="leadSuccess"
+                style="display: none; color: var(--primary); margin-top: 1rem; font-weight: 600; font-size: 1.1rem;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i> Thank you! We will contact you
+                shortly.
+            </div>
+        </div>
+    </div>
+    <!-- Availability Modal -->
+    <div id="availabilityModal" class="modal hide">
+        <div class="modal-content">
+            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h2>Check Availability</h2>
+            <p>Plan your stay at Vishnu Paradise. Enter your dates below to check availability via WhatsApp.</p>
+            <form id="availabilityForm">
+                <div class="form-row" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="checkIn" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-In</label>
+                        <input type="date" id="checkIn" required
+                            style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="checkOut" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Check-Out</label>
+                        <input type="date" id="checkOut" required
+                            style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="guests" style="display: block; font-size: 0.8rem; margin-bottom: 0.3rem; color: var(--text-secondary);">Guests</label>
+                    <select id="guests" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary);">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Check Availability on WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919515933317?text=Hi!%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more%20about%20booking%20a%20room."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</body>
+
+</html>
