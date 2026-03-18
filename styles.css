@@ -309,6 +309,7 @@ html:not([data-theme]) .fa-sun { display: none; } /* Default light */
 /* Hero Section - Enhanced Mobile Responsive */
 .hero {
     min-height: 100vh;
+    min-height: 100dvh; /* Support for dynamic viewport height */
     display: flex;
     align-items: center;
     padding-top: 120px;
@@ -2470,4 +2471,190 @@ body:has(.announcement-bar:not(.hidden)) .navbar {
     0%   { transform: scale(1); }
     50%  { transform: scale(1.08); }
     100% { transform: scale(1); }
+}
+
+/* ============================================
+   ANDROID-SPECIFIC OPTIMIZATIONS
+   ============================================ */
+
+/* ---- Global Android Fixes ---- */
+html {
+    overflow-x: hidden;         /* Fix Android Chrome horizontal scroll bleed */
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    word-break: break-word;     /* Prevent text overflow on narrow Android screens */
+    overscroll-behavior-y: contain; /* Prevent pull-to-refresh interfering with sticky elements */
+}
+
+/* Disable tap highlight on all interactive elements for Android Chrome */
+a, button, .btn, .filter-btn, .gallery-item,
+.service-card, .amenity-card, .review-card,
+.attraction-card, .sticky-btn, .mobile-menu-btn,
+.theme-toggle, .close-modal {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* ---- 360px: Budget Android (Redmi Note, Galaxy A series, Moto G) ---- */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.85rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .hero-logo-ring {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero-logo-card {
+        padding: 1.2rem 0.8rem 1.8rem;
+        gap: 1rem;
+    }
+
+    .hero-pill {
+        padding: 0.28rem 0.55rem;
+        font-size: 0.6rem;
+    }
+
+    .hero-badge {
+        padding: 0.65rem 0.9rem;
+        gap: 0.6rem;
+    }
+
+    .hero-badge strong { font-size: 0.75rem; }
+    .hero-badge span   { font-size: 0.65rem; }
+    .hero-badge i      { font-size: 1.2rem; }
+
+    .btn {
+        padding: 0.75rem 1.2rem;
+        font-size: 0.82rem;
+    }
+
+    .section-header h2,
+    .about-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-header p,
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .stat-item h3   { font-size: 1.4rem; }
+    .stat-item span { font-size: 0.75rem; }
+
+    .amenity-card h3    { font-size: 1.1rem; }
+    .amenity-card p     { font-size: 0.85rem; }
+    .review-card        { padding: 1.5rem 1rem; }
+    .attraction-content { padding: 1.2rem; }
+
+    .footer-contact li  { font-size: 0.82rem; }
+
+    .nav-container   { padding: 0 0.85rem; }
+    .logo img        { max-height: 38px; }
+    .btn-register    { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+}
+
+/* ---- 361px–412px: Samsung Galaxy S/A, Pixel 6/7, OnePlus ---- */
+@media (min-width: 361px) and (max-width: 412px) {
+    .hero-text h1 {
+        font-size: clamp(1.9rem, 7vw, 2.3rem);
+    }
+
+    .hero-logo-ring {
+        width: clamp(145px, 38vw, 185px);
+        height: clamp(145px, 38vw, 185px);
+    }
+
+    .btn {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.88rem;
+    }
+
+    .section-header h2,
+    .about-text h2 {
+        font-size: clamp(1.6rem, 6vw, 2rem);
+    }
+
+    .amenity-card,
+    .service-content {
+        padding: 1.5rem 1.1rem;
+    }
+
+    .nav-container { padding: 0 1rem; }
+    .logo img      { max-height: 44px; }
+}
+
+/* ---- Android Navigation Bar (Software buttons) ---- */
+@media (max-width: 860px) {
+    .sticky-mobile-bar {
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 8px));
+    }
+
+    body {
+        padding-bottom: max(70px, calc(60px + env(safe-area-inset-bottom, 0px)));
+    }
+}
+
+/* ---- Android landscape: most Android phones rotate to ~667px wide ---- */
+@media (max-width: 860px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding-top: 75px;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-split-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .hero-text p { margin: 0 0 1rem; }
+    .hero-actions { justify-content: flex-start; }
+
+    .hero-logo-card {
+        min-height: auto;
+        padding: 1rem 0.8rem 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .hero-logo-ring {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-pills-row { gap: 0.3rem; }
+    .hero-pill      { font-size: 0.6rem; padding: 0.25rem 0.5rem; }
+
+    .about, .services-showcase, .gallery, .amenities, .reviews, .attractions {
+        padding: 2.5rem 0;
+    }
+}
+
+/* ---- Input zoom prevention (Android Chrome zooms on focus if font < 16px) ---- */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="date"], input[type="number"], select, textarea {
+    font-size: 16px !important;
+    touch-action: manipulation;
+}
+
+/* ---- Sticky bar icon size fix for small Android ---- */
+@media (max-width: 360px) {
+    .sticky-btn i    { font-size: 1rem; }
+    .sticky-btn span { font-size: 0.6rem; }
 }
